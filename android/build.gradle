@@ -1,27 +1,27 @@
 group 'com.nikolai.imagedraw.draw_on_image_plugin'
 version '2.0-SNAPSHOT'
 buildscript {
-    ext.kotlin_version = '1.7.0'
+    ext.kotlin_version = '1.9.23'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:8.3.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 android {
     namespace "com.draw_on_image_plugin"
-    compileSdkVersion 30
+    compileSdkVersion 34
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -31,12 +31,12 @@ android {
     
     // Add these lines to fix JVM target mismatch
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 }
 dependencies {

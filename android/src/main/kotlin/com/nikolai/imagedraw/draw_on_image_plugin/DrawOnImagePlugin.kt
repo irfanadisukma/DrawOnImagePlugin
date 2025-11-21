@@ -45,7 +45,7 @@ class DrawOnImagePlugin: FlutterPlugin, MethodCallHandler {
                     }
                 }
             }
-            TARGET_PATH_NAME -> result.success(PathUtils.getDataDirectory(appContext))
+            TARGET_PATH_NAME -> result.success(appContext.filesDir.path)
             else -> result.notImplemented()
         }
     }
